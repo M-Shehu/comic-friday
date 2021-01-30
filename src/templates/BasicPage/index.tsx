@@ -1,4 +1,5 @@
-import { Flex, Stack } from "@chakra-ui/react";
+import { Flex, Stack, Box } from "@chakra-ui/react";
+import Footer from "components/Footer";
 
 type BasicPageProps = {
   children: React.ReactNode;
@@ -6,9 +7,12 @@ type BasicPageProps = {
 
 function BasicPage({ children }: BasicPageProps) {
   return (
-    <Stack h="100%" align="center">
-      <Flex w="100%" maxW="1024px" py="50px" flexDir="column">
-        {children}
+    <Stack h="100vh" align="center">
+      <Flex h="100%" w="100%" maxW="1024px" py="50px" flexDir="column">
+        <Box flex="8">{children}</Box>
+        <Stack justify="flex-end" flex="1">
+          <Footer />
+        </Stack>
       </Flex>
     </Stack>
   );
