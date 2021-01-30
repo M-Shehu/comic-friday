@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Comic Friday",
+  "name": "New curated comics every first Friday of the month",
   "icons": [
     {
       "src": "favicon.ico",
