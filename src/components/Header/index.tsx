@@ -14,7 +14,7 @@ function Header() {
     <HStack justify="space-between">
       <HStack maxW="30">
         <Image src={comicFridayLogo} />
-        <Heading fontFamily="merriweather">
+        <Heading as="h1" size="lg" fontFamily="merriweather">
           Comic <br /> Fridays
         </Heading>
       </HStack>

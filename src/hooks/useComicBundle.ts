@@ -1,29 +1,24 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useCallback, useEffect, useState } from "react";
-
-const defaultDimensions = {
-  top: 0,
-  bottom: 500,
-  height: 500,
-};
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export default function useComicBundleHeight() {
   const [bundleHeight, setBundleHeight] = useState(500);
   const [imageLoaded, setImageLoaded] = useState(0);
-  const [firstComic, setFirstComic] = useState(defaultDimensions);
-  const [secondComic, setSecondComic] = useState(defaultDimensions);
-  const [thirdComic, setThirdComic] = useState(defaultDimensions);
+  const [firstComic, setFirstComic] = useState<HTMLInputElement>(null!);
+  const [secondComic, setSecondComic] = useState<HTMLInputElement>(null!);
+  const [thirdComic, setThirdComic] = useState<HTMLInputElement>(null!);
+  const boxRef = useRef<HTMLInputElement>(null!);
 
   useEffect(() => {
     const highestTop = Math.min(
-      firstComic.top,
-      secondComic.top,
-      thirdComic.top
+      firstComic?.getBoundingClientRect().top,
+      secondComic?.getBoundingClientRect().top,
+      thirdComic?.getBoundingClientRect().top
     );
     const lowestBottom = Math.max(
-      firstComic.bottom,
-      secondComic.bottom,
-      thirdComic.bottom
+      firstComic?.getBoundingClientRect().bottom,
+      secondComic?.getBoundingClientRect().bottom,
+      thirdComic?.getBoundingClientRect().bottom
     );
 
     setBundleHeight(lowestBottom - highestTop);
@@ -32,7 +27,7 @@ export default function useComicBundleHeight() {
   const measuredRefFirstComic = useCallback(
     node => {
       if (node !== null) {
-        setFirstComic(node.getBoundingClientRect());
+        setFirstComic(node);
       }
     },
     [imageLoaded]
@@ -40,7 +35,7 @@ export default function useComicBundleHeight() {
   const measuredRefSecondComic = useCallback(
     node => {
       if (node !== null) {
-        setSecondComic(node.getBoundingClientRect());
+        setSecondComic(node);
       }
     },
     [imageLoaded]
@@ -48,13 +43,13 @@ export default function useComicBundleHeight() {
   const measuredRefThirdComic = useCallback(
     node => {
       if (node !== null) {
-        setThirdComic(node.getBoundingClientRect());
+        setThirdComic(node);
       }
     },
     [imageLoaded]
   );
 
-  const insertRef = (index: number) => {
+  const insertImageRef = (index: number) => {
     if (index === 0) {
       return measuredRefFirstComic;
     } else if (index === 1) {
@@ -63,5 +58,6 @@ export default function useComicBundleHeight() {
       return measuredRefThirdComic;
     }
   };
-  return { bundleHeight, insertRef, setImageLoaded };
+
+  return { bundleHeight, boxRef, insertImageRef, setImageLoaded };
 }

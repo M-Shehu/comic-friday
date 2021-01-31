@@ -8,6 +8,9 @@ export default function App() {
         <Route exact path="/">
           <Home />
         </Route>
+        <Route path="/:comicPickId">
+          <Home />
+        </Route>
       </Switch>
     </Router>
   );
