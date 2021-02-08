@@ -74,8 +74,9 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
         alignItems="flex-start"
         w="100%"
         overflowX="auto"
+        overflowY="hidden"
       >
-        <Box minW="300px" h="300px"></Box>
+        <Box boxSize={["100px", "200px", "300px"]}></Box>
         {comics.map((comic, index) => (
           <Flex key={"carousel" + index} justify="center">
             <TrackVisibility onVisible={() => setCurrentIndex(index)}>
@@ -91,7 +92,7 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
             </TrackVisibility>
           </Flex>
         ))}
-        <Box minW="300px" h="300px"></Box>
+        <Box boxSize={["100px", "200px", "300px"]}></Box>
       </Grid>
       <Container>
         <Stack align="center" spacing="25px">
