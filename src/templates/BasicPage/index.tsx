@@ -1,5 +1,7 @@
-import { Flex, Stack, Box } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import Footer from "components/Footer";
+import Header from "components/Header";
+import Container from "templates/Container";
 
 type BasicPageProps = {
   children: React.ReactNode;
@@ -7,15 +9,14 @@ type BasicPageProps = {
 
 function BasicPage({ children }: BasicPageProps) {
   return (
-    <Stack h="100vh" align="center">
-      <Flex h="100%" w="100%" maxW="1024px" py="50px" flexDir="column">
-        <Box pos="relative" flex="8">
-          {children}
-        </Box>
-        <Stack justify="flex-end" flex="1">
-          <Footer />
-        </Stack>
-      </Flex>
+    <Stack minH="100vh" align="center" justify="space-between">
+      <Container mt={["25px", "50px"]}>
+        <Header />
+      </Container>
+      {children}
+      <Container mb={["25px", "50px"]}>
+        <Footer />
+      </Container>
     </Stack>
   );
 }

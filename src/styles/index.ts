@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import styled from "@emotion/styled";
 
 const theme = extendTheme({
   styles: {
@@ -13,8 +14,8 @@ const theme = extendTheme({
     },
   },
   colors: {
-    primary: "#365363",
-    accent: "#8B6453",
+    primary: { 500: "#365363" },
+    accent: { 100: "#e2c8bc", 500: "#8B6453" },
   },
 });
 
