@@ -1,0 +1,7 @@
+.comics-container {
+  scroll-snap-type: x mandatory;
+}
+
+.comic {
+  scroll-snap-align: center;
+}

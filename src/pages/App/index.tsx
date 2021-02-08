@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "pages/Home";
+import ComicPick from "pages/ComicPick";
 
 export default function App() {
   return (
@@ -9,7 +10,7 @@ export default function App() {
           <Home />
         </Route>
         <Route path="/:comicPickId">
-          <Home />
+          <ComicPick />
         </Route>
       </Switch>
     </Router>
