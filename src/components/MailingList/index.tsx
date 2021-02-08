@@ -8,6 +8,7 @@ const MAIL_CHIMP_URL =
 function MailingList() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const toast = useToast();
 
   const subscribe = () =>
     fetchJsonp(MAIL_CHIMP_URL + "&" + new URLSearchParams({ EMAIL: email }), {
@@ -47,8 +48,6 @@ function MailingList() {
       });
     }
   };
-
-  const toast = useToast();
 
   return (
     <Stack

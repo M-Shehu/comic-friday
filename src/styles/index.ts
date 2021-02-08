@@ -1,5 +1,4 @@
 import { extendTheme } from "@chakra-ui/react";
-import styled from "@emotion/styled";
 
 const theme = extendTheme({
   styles: {
