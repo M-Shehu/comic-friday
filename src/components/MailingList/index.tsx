@@ -15,10 +15,32 @@ function MailingList() {
       jsonpCallback: "c",
     }).then(resp => resp.json());
 
+  const validateEmail = (email: string) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (!validateEmail(email)) {
+      return toast({
+        title: "Invalid Email!",
+        description: "Please enter a valid email address",
+        status: "error",
+        duration: 8000,
+        isClosable: true,
+      });
+    }
     setLoading(true);
-    const { msg, result } = await subscribe();
+    const { msg, result } = await subscribe().catch(err => {
+      toast({
+        title: "Error!",
+        description: err,
+        status: "error",
+        duration: 8000,
+        isClosable: true,
+      });
+    });
     setLoading(false);
     if (result === "error") {
       if (typeof msg === "string" && msg.includes("already subscribed")) {

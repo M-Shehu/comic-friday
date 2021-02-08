@@ -7,7 +7,7 @@ function Footer() {
         Comic Fridays App
       </Text>
       <Text fontSize={["10px", "xs"]} fontWeight="300">
-        Made with ❤ by Shehu
+        Meticulously crafted by Shehu
       </Text>
       <Text fontSize={["10px", "xs"]} fontWeight="300">
         Per il Mio 🍍
