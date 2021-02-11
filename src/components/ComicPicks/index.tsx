@@ -1,5 +1,4 @@
 import { Button, HStack, Stack, Image } from "@chakra-ui/react";
-import { format } from "date-fns";
 import { useHistory, useParams } from "react-router-dom";
 
 import ComicBundle from "components/ComicBundle";
