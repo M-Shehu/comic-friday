@@ -1,0 +1,23 @@
+@keyframes loadingIcon {
+  from {
+    background-color: #8b6453;
+  }
+  to {
+    background-color: #365363;
+  }
+}
+
+.loading-square {
+  animation-name: loadingIcon;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+.loading-square.second {
+  animation-delay: 0.5s;
+}
+.loading-square.third {
+  animation-delay: 1s;
+}
+.loading-square.fourth {
+  animation-delay: 1.5s;
+}

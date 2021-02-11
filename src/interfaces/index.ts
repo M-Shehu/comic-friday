@@ -1,10 +1,29 @@
 export interface ComicBundleType {
   id: string;
   comics: ComicType[];
-  heading: string;
+  date: string;
+  slug: string;
 }
 
 export type ComicType = {
-  imgSrc: string;
+  imgSrc: ImgSrcType[];
   artist: string;
+};
+
+export type ImgSrcType = {
+  id: number;
+  formats: {
+    thumbnail: {
+      url: string;
+    };
+    small: {
+      url: string;
+    };
+    medium: {
+      url: string;
+    };
+    large: {
+      url: string;
+    };
+  };
 };
