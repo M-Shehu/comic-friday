@@ -24,6 +24,7 @@ import cuteButon from "assets/images/cute-button.png";
 import striaghtFaceButton from "assets/images/straight-face-button.png";
 import { IndicatorDots } from "./components/IndicatorDots";
 import { useMediaQuery } from "react-responsive";
+import { ReactionButton } from "./components/ReactionButton";
 
 type ComicCarouselType = {
   comics: ComicType[];
@@ -100,33 +101,9 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
           <IndicatorDots comics={comics} currentIndex={currentIndex} />
 
           <HStack justify="center" spacing="8">
-            <IconButton
-              colorScheme="orange"
-              bgColor="#8B6453"
-              p={["10px", "15px", "20px"]}
-              boxSize={["50px", "65px", "80px"]}
-              aria-label="Funny button"
-              isRound
-              icon={<Image src={laughButton} />}
-            />
-            <IconButton
-              colorScheme="orange"
-              p={["10px", "15px", "20px"]}
-              bgColor="#8B6453"
-              boxSize={["50px", "65px", "80px"]}
-              aria-label="cute button"
-              isRound
-              icon={<Image src={cuteButon} />}
-            />
-            <IconButton
-              colorScheme="orange"
-              p={["10px", "15px", "20px"]}
-              bgColor="#8B6453"
-              boxSize={["50px", "65px", "80px"]}
-              aria-label="straight face button"
-              isRound
-              icon={<Image src={striaghtFaceButton} />}
-            />
+            <ReactionButton src={laughButton} />
+            <ReactionButton src={cuteButon} />
+            <ReactionButton src={striaghtFaceButton} />
           </HStack>
           <Text
             mt="40px"
