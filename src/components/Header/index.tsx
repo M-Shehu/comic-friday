@@ -6,6 +6,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Link,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { useMediaQuery } from "react-responsive";
@@ -16,17 +17,19 @@ function Header() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   return (
     <HStack justify="space-between">
-      <HStack maxW="30">
-        <Image w={["50px", "70px"]} src={comicFridayLogo} />
-        <Heading
-          as="h1"
-          fontSize={["20px", "24px"]}
-          size="lg"
-          fontFamily="merriweather"
-        >
-          Comic <br /> Fridays
-        </Heading>
-      </HStack>
+      <Link href="/">
+        <HStack maxW="30">
+          <Image w={["50px", "70px"]} src={comicFridayLogo} />
+          <Heading
+            as="h1"
+            fontSize={["20px", "24px"]}
+            size="lg"
+            fontFamily="merriweather"
+          >
+            Comic <br /> Fridays
+          </Heading>
+        </HStack>
+      </Link>
       {isTabletOrMobile ? (
         <IconButton
           size="lg"

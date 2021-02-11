@@ -8,6 +8,7 @@ export interface ComicBundleType {
 export type ComicType = {
   imgSrc: ImgSrcType[];
   artist: string;
+  artistLink: string;
 };
 
 export type ImgSrcType = {
