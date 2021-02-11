@@ -19,7 +19,7 @@ export default function ComicPick() {
     <LoadingIcon />
   ) : (
     <BasicPage>
-      <Stack mt="50px" spacing="95px" h="100%" w="100%">
+      <Stack spacing="95px" h="100%" w="100%">
         <ComicCarousel
           comics={result.data[0].comics}
           heading={`${formatDate(result.data[0].date)} Picks`}

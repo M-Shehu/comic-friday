@@ -73,8 +73,7 @@ function MailingList() {
 
   return (
     <Stack
-      py="50px"
-      pb={[0, "50px"]}
+      pt={["25px", "50px"]}
       flex="2"
       direction={["column", "column", "row"]}
       align="center"

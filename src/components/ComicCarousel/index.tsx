@@ -10,6 +10,7 @@ import {
   Text,
   IconButton,
   Grid,
+  Link,
 } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 
@@ -22,6 +23,7 @@ import laughButton from "assets/images/laugh-button.png";
 import cuteButon from "assets/images/cute-button.png";
 import striaghtFaceButton from "assets/images/straight-face-button.png";
 import { IndicatorDots } from "./components/IndicatorDots";
+import { useMediaQuery } from "react-responsive";
 
 type ComicCarouselType = {
   comics: ComicType[];
@@ -31,7 +33,7 @@ type ComicCarouselType = {
 export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
   const history = useHistory();
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   return (
     <Stack
       w="100%"
@@ -65,10 +67,9 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
         pb="30px"
         templateRows="100%"
         sx={{
-          "&::-webkit-scrollbar": {
-            display: "none",
-          },
+          "&::-webkit-scrollbar": { display: "none" },
         }}
+        {...(isTabletOrMobile && { templateColumns: "50px" })}
         className="comics-container"
         justifyContent="space-between"
         alignItems="flex-start"
@@ -133,7 +134,18 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
             fontSize={["md", "xl"]}
             fontWeight="bold"
           >
-            Artist: {comics[currentIndex]?.artist}
+            Artist:{" "}
+            {comics[currentIndex] ? (
+              <Link
+                href={comics[currentIndex].artistLink}
+                isExternal
+                variant="link"
+              >
+                {comics[currentIndex]?.artist}
+              </Link>
+            ) : (
+              "Unknown"
+            )}
           </Text>
         </Stack>
       </Container>
