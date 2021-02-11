@@ -11,14 +11,14 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
-          <Redirect from="/" to="/picks/1" />
-        </Route>
         <Route path="/picks/:currentPage">
           <Home />
         </Route>
         <Route path="/single-pick/:comicPickId">
           <ComicPick />
+        </Route>
+        <Route path="*">
+          <Redirect to="/picks/1" />
         </Route>
       </Switch>
     </Router>
