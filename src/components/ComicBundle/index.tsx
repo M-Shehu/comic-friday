@@ -3,12 +3,19 @@ import { Box, Heading, Image, Stack } from "@chakra-ui/react";
 
 import useComicBundle from "hooks/useComicBundle";
 import fallback from "assets/images/fallback.png";
-import { useComicBundleStore } from "store";
 
 import "./styles/index.css";
-import { ComicBundleType } from "interfaces";
+import { ComicType } from "interfaces";
 
-function ComicBundle({ heading, comics, id }: ComicBundleType) {
+function ComicBundle({
+  heading,
+  comics,
+  slug,
+}: {
+  heading: string;
+  comics: ComicType[];
+  slug: string;
+}) {
   const {
     bundleHeight,
     insertImageRef,
@@ -16,16 +23,8 @@ function ComicBundle({ heading, comics, id }: ComicBundleType) {
     setImageLoaded,
   } = useComicBundle();
   const history = useHistory();
-  const setCurrentPick = useComicBundleStore(state => state.setCurrentPick);
-  const setCurrentPickComics = useComicBundleStore(
-    state => state.setCurrentPickComics
-  );
 
-  const onBoxClick = () => {
-    history.push(`/${id}`);
-    setCurrentPick(id);
-    setCurrentPickComics({ heading, comics, id });
-  };
+  const onBoxClick = () => history.push(`/single-pick/${slug}`);
 
   return (
     <Stack w="100%" align="center" spacing="20px">
@@ -57,7 +56,7 @@ function ComicBundle({ heading, comics, id }: ComicBundleType) {
             onLoad={() => setImageLoaded(image => image + 1)}
             zIndex={index}
             boxShadow="2xl"
-            src={comic.imgSrc}
+            src={`${process.env.REACT_APP_API_URL}${comic.imgSrc[0].formats?.small?.url}`}
             alt="Comic"
           />
         ))}

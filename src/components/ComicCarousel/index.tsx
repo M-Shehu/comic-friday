@@ -86,7 +86,7 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
                 w={["250px", "300px"]}
                 id={index.toString()}
                 boxShadow={["lg", "2xl"]}
-                src={comic.imgSrc}
+                src={`${process.env.REACT_APP_API_URL}${comic?.imgSrc[0]?.formats?.small?.url}`}
                 alt="Comic"
               />
             </TrackVisibility>
@@ -133,7 +133,7 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
             fontSize={["md", "xl"]}
             fontWeight="bold"
           >
-            Artist: {comics[currentIndex].artist}
+            Artist: {comics[currentIndex]?.artist}
           </Text>
         </Stack>
       </Container>
