@@ -56,7 +56,7 @@ function ComicBundle({
             onLoad={() => setImageLoaded(image => image + 1)}
             zIndex={index}
             boxShadow="2xl"
-            src={`${process.env.REACT_APP_API_URL}${comic.imgSrc[0].formats?.small?.url}`}
+            src={comic.imgSrc[0].formats?.small?.url}
             alt="Comic"
           />
         ))}

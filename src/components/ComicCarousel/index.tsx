@@ -96,7 +96,7 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
                 w={["250px", "300px"]}
                 id={index.toString()}
                 boxShadow={["lg", "2xl"]}
-                src={`${process.env.REACT_APP_API_URL}${comic?.imgSrc[0]?.formats?.small?.url}`}
+                src={comic?.imgSrc[0]?.formats?.small?.url}
                 alt="Comic"
               />
             </TrackVisibility>
@@ -141,7 +141,7 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
           <Image
             fallbackSrc={fallback}
             width="100%"
-            src={`${process.env.REACT_APP_API_URL}${comics[currentIndex]?.imgSrc[0]?.formats?.small?.url}`}
+            src={comics[currentIndex]?.imgSrc[0]?.formats?.small?.url}
           />
           <ModalBody></ModalBody>
         </ModalContent>
