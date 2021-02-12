@@ -139,6 +139,7 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
         <ModalContent top="10%">
           <ModalCloseButton />
           <Image
+            fallbackSrc={fallback}
             width="100%"
             src={`${process.env.REACT_APP_API_URL}${comics[currentIndex]?.imgSrc[0]?.formats?.small?.url}`}
           />
