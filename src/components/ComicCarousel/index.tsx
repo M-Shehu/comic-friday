@@ -11,6 +11,12 @@ import {
   IconButton,
   Grid,
   Link,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalCloseButton,
+  ModalBody,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 
@@ -35,6 +41,7 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
   const history = useHistory();
   const [currentIndex, setCurrentIndex] = useState(0);
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Stack
       w="100%"
@@ -83,6 +90,7 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
           <Flex key={"carousel" + index} justify="center">
             <TrackVisibility onVisible={() => setCurrentIndex(index)}>
               <Image
+                onClick={onOpen}
                 className="comic"
                 fallbackSrc={fallback}
                 w={["250px", "300px"]}
@@ -126,6 +134,17 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
           </Text>
         </Stack>
       </Container>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent top="10%">
+          <ModalCloseButton />
+          <Image
+            width="100%"
+            src={`${process.env.REACT_APP_API_URL}${comics[currentIndex]?.imgSrc[0]?.formats?.small?.url}`}
+          />
+          <ModalBody></ModalBody>
+        </ModalContent>
+      </Modal>
     </Stack>
   );
 }
