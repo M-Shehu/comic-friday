@@ -136,7 +136,7 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
       </Container>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent top="10%">
+        <ModalContent my="auto">
           <ModalCloseButton />
           <Image
             fallbackSrc={fallback}
