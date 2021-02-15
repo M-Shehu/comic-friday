@@ -1,8 +1,9 @@
-import { format } from "date-fns";
+import { DateTime } from "luxon";
 
 export default function formatDate(
   dateStr: string,
-  formatStr: string = "do MMMM yy"
+  inputFormatStr: string = "yyyy-LL-dd",
+  formatStr: string = "LLLL d, kkkk"
 ) {
-  return format(new Date(dateStr), formatStr);
+  return DateTime.fromFormat(dateStr, inputFormatStr).toFormat(formatStr);
 }
