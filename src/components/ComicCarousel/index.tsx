@@ -111,15 +111,6 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
         pt="50px"
       >
         <HStack spacing={["10px", "20px"]}>
-          <IconButton
-            variant="ghost"
-            colorScheme="orange"
-            size="lg"
-            color="accent.500"
-            aria-label="Close button"
-            onClick={onShare}
-            icon={<BiShareAlt style={{ height: "1.5em", width: "1.5em" }} />}
-          />
           <Heading
             size="lg"
             fontSize={["20px", "24px"]}
@@ -184,6 +175,19 @@ export default function ComicCarousel({ heading, comics }: ComicCarouselType) {
               <ReactionButton src={laughButton} />
               <ReactionButton src={cuteButon} />
               <ReactionButton src={striaghtFaceButton} />
+              <IconButton
+                colorScheme="blackAlpha"
+                size="lg"
+                boxSize={["50px", "65px", "80px"]}
+                isRound
+                bg="primary.500"
+                color="white"
+                aria-label="Close button"
+                onClick={onShare}
+                icon={
+                  <BiShareAlt style={{ height: "1.5em", width: "1.5em" }} />
+                }
+              />
             </HStack>
             <Text
               mt="40px"
