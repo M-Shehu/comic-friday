@@ -4,6 +4,8 @@ import BasicPage from "templates/BasicPage";
 import Container from "templates/Container";
 import useScrollToTop from "hooks/useScrollToTop";
 
+import fallback from "assets/images/fallback.png";
+
 import first from "assets/exclusive/comics/1.jpg";
 import second from "assets/exclusive/comics/2.png";
 import third from "assets/exclusive/comics/3.png";
@@ -50,17 +52,72 @@ export function ExclusiveClub1() {
             estimates) of the population. Enjoy:
           </Text>
           <SimpleGrid columns={[1, 2]} spacing={10} px="10%">
-            <Image boxShadow="2xl" border={border} src={first} />
-            <Image boxShadow="2xl" border={border} src={second} />
-            <Image boxShadow="2xl" border={border} src={third} />
-            <Image boxShadow="2xl" border={border} src={fourth} />
-            <Image boxShadow="2xl" border={border} src={five} />
-            <Image boxShadow="2xl" border={border} src={six} />
-            <Image boxShadow="2xl" border={border} src={seven} />
-            <Image boxShadow="2xl" border={border} src={eight} />
-            <Image boxShadow="2xl" border={border} src={nine} />
-            <Image boxShadow="2xl" border={border} src={ten} />
-            <Image boxShadow="2xl" border={border} src={eleven} />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={first}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={second}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={third}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={fourth}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={five}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={six}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={seven}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={eight}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={nine}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={ten}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={eleven}
+            />
           </SimpleGrid>
           <Text fontSize="lg">
             I'm sure you're thinking to yourself that was incredibly mid and
@@ -73,7 +130,7 @@ export function ExclusiveClub1() {
             colorScheme="orange"
             bgColor="accent.500"
           >
-            Sha take me to the other mid comics 😒
+            Return to other mid comics 😔
           </Button>
         </Stack>
       </Container>
@@ -104,19 +161,84 @@ export function ExclusiveClub2() {
             I'm obligated to celebrate the ones I've been honored to view
           </Text>
           <SimpleGrid columns={[1, 2]} spacing={10} px="10%">
-            <Image boxShadow="2xl" border={border} src={artfirst} />
-            <Image boxShadow="2xl" border={border} src={artsecond} />
-            <Image boxShadow="2xl" border={border} src={artthird} />
-            <Image boxShadow="2xl" border={border} src={artfourth} />
-            <Image boxShadow="2xl" border={border} src={artfive} />
-            <Image boxShadow="2xl" border={border} src={artsix} />
-            <Image boxShadow="2xl" border={border} src={artseven} />
-            <Image boxShadow="2xl" border={border} src={arteight} />
-            <Image boxShadow="2xl" border={border} src={artnine} />
-            <Image boxShadow="2xl" border={border} src={artten} />
-            <Image boxShadow="2xl" border={border} src={arteleven} />
-            <Image boxShadow="2xl" border={border} src={arttwelve} />
-            <Image boxShadow="2xl" border={border} src={artthirteen} />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={artfirst}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={artsecond}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={artthird}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={artfourth}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={artfive}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={artsix}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={artseven}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={arteight}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={artnine}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={artten}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={arteleven}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={arttwelve}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={artthirteen}
+            />
           </SimpleGrid>
           <Text fontSize="lg">
             If I haven't stressed enough, I'm your forever fan. Let me be the
