@@ -17,6 +17,7 @@ import eight from "assets/exclusive/comics/8.jpeg";
 import nine from "assets/exclusive/comics/9.jpeg";
 import ten from "assets/exclusive/comics/10.png";
 import eleven from "assets/exclusive/comics/11.png";
+import twelve from "assets/exclusive/comics/12.png";
 
 import artfirst from "assets/exclusive/art/1.jpg";
 import artsecond from "assets/exclusive/art/2.jpg";
@@ -117,6 +118,12 @@ export function ExclusiveClub1() {
               fallbackSrc={fallback}
               border={border}
               src={eleven}
+            />
+            <Image
+              boxShadow="2xl"
+              fallbackSrc={fallback}
+              border={border}
+              src={twelve}
             />
           </SimpleGrid>
           <Text fontSize="lg">
