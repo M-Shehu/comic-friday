@@ -4,6 +4,7 @@ import { Box, Center, HStack, Text } from "@chakra-ui/layout";
 import {
   Modal,
   ModalBody,
+  ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalHeader,
@@ -29,7 +30,7 @@ export default function ExclusiveModal({ onClose, isOpen }: IExclusiveModal) {
       if (value.toLocaleLowerCase() === "miosuti") {
         setRightName(true);
         setTimeout(() => {
-          history.push("/exclusive-club");
+          history.replace("/exclusive-club");
         }, 3000);
       } else {
         setError(true);
@@ -50,9 +51,11 @@ export default function ExclusiveModal({ onClose, isOpen }: IExclusiveModal) {
         bg="primary.500"
         overflowY="hidden"
         color="white"
+        maxW="100%"
         minH={rightName ? "25%" : "50%"}
         transition="0.1s cubic-bezier(0.4, 0, 0.2, 1) height"
       >
+        <ModalCloseButton />
         <ModalHeader>{rightName ? "Yaaay! 🥳" : "Almost there..."}</ModalHeader>
 
         <ModalBody display="flex" flexDir="column">
@@ -69,7 +72,6 @@ export default function ExclusiveModal({ onClose, isOpen }: IExclusiveModal) {
                 <FormControl isInvalid={error}>
                   <HStack my={5} justify="center">
                     <PinInput
-                      size="sm"
                       placeholder="_"
                       type="alphanumeric"
                       defaultValue="M"
