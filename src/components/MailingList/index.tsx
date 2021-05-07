@@ -61,6 +61,7 @@ function MailingList() {
         });
       }
     } else if (result === "success") {
+      setEmail("");
       toast({
         title: "Success!",
         description: "Welcome to the Comic Friday mailing list!",
