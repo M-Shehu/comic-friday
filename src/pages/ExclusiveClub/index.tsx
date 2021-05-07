@@ -156,12 +156,12 @@ export function ExclusiveClub2() {
         <Stack spacing="30px">
           <Heading>True Louvre 🎨</Heading>
           <Text fontSize="lg">
-            Sike 🌚! You thought we were done. Oh no no! I want to take the time
-            to brag about my favorite artist; You ❤️!
+            Sike 🌚 ! You thought we were done. Oh no no! I want to take the
+            time to brag about my favorite artist; You ❤️ !
             <br />
             <br />
             I've been exposed to your brilliance since 2018 and never has it
-            stopped <del>shining</del> radianting. Every one of your work leaves
+            stopped <del>shining</del> radiating. Every one of your work leaves
             me in awe just as the last did! Its like periodic amnesia. "Oh she's
             talented!" only to repeat the same words in shock a couple of months
             later. My only regret is I don't get to see more of it, which is why
