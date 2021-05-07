@@ -51,7 +51,6 @@ export default function ExclusiveModal({ onClose, isOpen }: IExclusiveModal) {
         bg="primary.500"
         overflowY="hidden"
         color="white"
-        maxW="100%"
         minH={rightName ? "25%" : "50%"}
         transition="0.1s cubic-bezier(0.4, 0, 0.2, 1) height"
       >
