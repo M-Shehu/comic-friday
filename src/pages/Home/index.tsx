@@ -37,7 +37,13 @@ export default function Home() {
     <LoadingIcon />
   ) : (
     <BasicPage>
-      <Alert status="success" justifyContent="center" mb={8} onClick={onOpen}>
+      <Alert
+        as="button"
+        status="success"
+        justifyContent="center"
+        mb={8}
+        onClick={onOpen}
+      >
         <Icon
           as={RiCake3Fill}
           boxSize="35px"
@@ -47,7 +53,7 @@ export default function Home() {
           color="white"
           mr="10px"
         />
-        Click here if you're a pretty 💁‍♀️and your birth month is May 🍍
+        Click here if you're a pretty 💁‍♀️ and your birth month is May 🍍
       </Alert>
       <Container flexDir={["column-reverse", "column"]} h="100%">
         <ComicPicks comicPicks={comicPicks} numberOfPages={numberOfPages} />
